@@ -1,0 +1,128 @@
+html {
+  height: 100%;
+}
+
+body {
+  background: linear-gradient(-0.125turn, rgb(180, 91, 85), #F29892);
+  min-height: 100%;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 1045px) {
+  .topright {
+    display: none;
+  }
+  .bottomright {
+    display: none;
+  }
+}
+
+@font-face {
+  font-family: "InterBold";
+  src: url("fonts/Inter-Bold.ttf");
+}
+
+@font-face {
+  font-family: "InterSemiBold";
+  src: url("fonts/Inter-SemiBold.ttf");
+}
+
+@font-face {
+  font-family: "Campground";
+  src: url("fonts/CampgroundFreeDemo-regular.otf") format("opentype");
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-top: 30px;
+  margin-left: 40px;
+  margin-bottom: 30px;
+}
+
+nav > img {
+  height: 55px;
+}
+
+nav > div {
+  font-family: InterSemiBold;
+  font-size: 30px;
+  color: #3148A1;
+  margin-top: 10px;
+  margin-left: 50px;
+}
+
+.topright {
+  position: absolute;
+  top: -100px;
+  right: -175px;
+  height: 300px;
+}
+
+.bottomright {
+  position: absolute;
+  bottom: -75px;
+  right: -10px;
+  height: 300px;
+}
+
+.bottomleft {
+  position: absolute;
+  bottom: -70px;
+  left: -30px;
+  height: 500px;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  height: 70vh;
+}
+
+.stack {
+  height: 100%;
+  min-width: 50%;
+  padding-top: 3vh;
+  padding-left: 12vh;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  padding-right: 18vh;
+  margin-left: -15vh;
+}
+
+.artstyle {
+  color: #FFFFFF;
+  font-size: 9.5vh;
+  font-family: Campground;
+  text-align: right;
+  min-width: 100%;
+}
+
+.date {
+  color: #3148A1;
+  font-size: 4.5vh;
+  font-family: InterBold;
+  text-align: center;
+  margin-top: 2vh;
+  margin-bottom: 5vh;
+}
+
+.updates {
+  border-width: 9px;
+  border-radius: 15px;
+  border-color: #3148A1;
+  border-style: solid;
+  color: #3148A1;
+  font-size: 4vh;
+  font-family: InterBold;
+  padding: 2.6vh 2.2vh;
+}
