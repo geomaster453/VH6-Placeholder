@@ -5,7 +5,6 @@ html {
 body {
   background: linear-gradient(-0.125turn, rgb(180, 91, 85), #F29892);
   min-height: 100%;
-  overflow: hidden;
 }
 
 @media screen and (max-width: 1045px) {
@@ -56,22 +55,22 @@ nav > div {
 
 .topright {
   position: absolute;
-  top: -100px;
-  right: -175px;
+  top: 0px;
+  right: 0px;
   height: 300px;
 }
 
 .bottomright {
   position: absolute;
-  bottom: -75px;
-  right: -10px;
+  bottom: 0px;
+  right: 0px;
   height: 300px;
 }
 
 .bottomleft {
   position: absolute;
-  bottom: -70px;
-  left: -30px;
+  bottom: 0px;
+  left: 0px;
   height: 500px;
 }
 
@@ -117,12 +116,31 @@ nav > div {
 }
 
 .updates {
-  border-width: 9px;
-  border-radius: 15px;
+  border-width: 4px;
+  border-radius: 20px;
   border-color: #3148A1;
   border-style: solid;
-  color: #3148A1;
-  font-size: 4vh;
-  font-family: InterBold;
-  padding: 2.6vh 2.2vh;
+  width: calc(37vh + 20px);
+  line-height: 30px;
+  padding-left: 10px;
+  background-color: rgb(243, 184, 161);
+}
+
+input::placeholder {
+  color: rgb(100, 116, 184);
+  font-size: 2vh;
+  font-weight: 125;
+}
+
+.form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  min-width: 100%;
+}
+
+.submit {
+  height: 20px;
+  margin-left: -30px;
+  margin-top: 10px;
 }

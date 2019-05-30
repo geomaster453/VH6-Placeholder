@@ -1,0 +1,33 @@
+{
+  "name": "vh6-placeholder",
+  "version": "1.0.0",
+  "description": "VH6 Placeholder Website",
+  "main": "server.ts",
+  "scripts": {
+    "start": "ts-node src/server.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VandyHacks/VH6-Placeholder.git"
+  },
+  "author": "Kevin Zhai",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/VandyHacks/VH6-Placeholder/issues"
+  },
+  "homepage": "https://github.com/VandyHacks/VH6-Placeholder#readme",
+  "dependencies": {
+    "koa": "^2.7.0",
+    "koa-router": "^7.4.0",
+    "koa-static": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/koa": "^2.0.48",
+    "@types/koa-router": "^7.0.40",
+    "@types/koa-static": "^4.0.1",
+    "nodemon": "^1.19.1",
+    "ts-node": "^8.2.0",
+    "tslint": "^5.16.0",
+    "typescript": "^3.5.1"
+  }
+}
