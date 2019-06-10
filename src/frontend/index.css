@@ -1,10 +1,10 @@
-html {
-  height: 100%;
-}
+/* *{
+  border: 1px solid red;
+} */
 
-body {
+html {
+  height: 100vh;
   background: linear-gradient(-0.125turn, rgb(180, 91, 85), #F29892);
-  min-height: 100%;
 }
 
 @media screen and (max-width: 1045px) {
@@ -120,7 +120,7 @@ nav > div {
   border-radius: 20px;
   border-color: #3148A1;
   border-style: solid;
-  width: calc(37vh + 20px);
+  width: calc(21vw + 20px);
   line-height: 30px;
   padding-left: 10px;
   background-color: rgb(243, 184, 161);

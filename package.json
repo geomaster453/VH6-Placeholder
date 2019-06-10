@@ -4,7 +4,8 @@
   "description": "VH6 Placeholder Website",
   "main": "server.ts",
   "scripts": {
-    "start": "ts-node src/server.ts"
+    "start": "ts-node src/server.ts",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
