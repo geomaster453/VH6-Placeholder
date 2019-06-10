@@ -5,7 +5,7 @@
   "main": "server.ts",
   "scripts": {
     "start": "ts-node src/server.ts",
-    "build": "tsc"
+    "run-build": "tsc"
   },
   "repository": {
     "type": "git",
