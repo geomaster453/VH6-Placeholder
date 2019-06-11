@@ -6,7 +6,7 @@ const port = process.env.PORT || 3000;
 const app = new Koa();
 // const router = new Router();
 
-app.use(Serve('public'));
+app.use(Serve('frontend'));
 
 app.listen(port);
 
