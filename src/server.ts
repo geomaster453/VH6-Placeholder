@@ -1,19 +1,14 @@
 import * as Koa from 'koa';
-import * as Send from 'koa-send';
-import * as Router from 'koa-router';
 import * as Serve from 'koa-static';
+import * as Mount from 'koa-mount';
 
 const port = process.env.PORT || 3000;
 const app = new Koa();
-const router = new Router();
+const ui = new Koa;
 
-app.use(Serve(`${__dirname}/frontend`));
-app.use(router.routes());
+ui.use(Serve(`${__dirname}/frontend`));
+app.use(Mount('/', ui));
 
 app.listen(port);
-
-// app.use(function* index(): any {
-//   yield Send(this, `${__dirname}/index.html`);
-// });
 
 console.log(`Listening on port ${port}`);
