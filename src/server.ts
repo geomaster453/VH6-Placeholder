@@ -6,6 +6,7 @@ const port = process.env.PORT || 3000;
 const app = new Koa();
 // const router = new Router();
 
+console.log(__dirname);
 app.use(Serve(`${__dirname}/frontend`));
 
 app.listen(port);
