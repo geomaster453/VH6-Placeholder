@@ -1,12 +1,12 @@
 import * as Koa from 'koa';
 // import * as Router from 'koa-router';
-import * as Serve from 'koa-static';
+import * as serve from 'koa-static';
 
 const port = process.env.PORT || 3000;
 const app = new Koa();
 // const router = new Router();
 
-app.use(Serve(`${__dirname}/app`));
+app.use(serve(`${__dirname}/app`));
 
 app.listen(port);
 
