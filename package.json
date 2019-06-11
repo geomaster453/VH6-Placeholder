@@ -5,7 +5,10 @@
   "main": "server.ts",
   "scripts": {
     "start": "ts-node src/server.ts",
-    "build": "tsc"
+    "build-ts": "tsc",
+    "postinstall": "npm run build-ts",
+    "watch-node": "nodemon dist/server.js",
+    "lint": "tslint -c tslint.json 'src/**/*.ts'"
   },
   "repository": {
     "type": "git",
