@@ -6,7 +6,7 @@ const port = process.env.PORT || 3000;
 const app = new Koa();
 const ui = new Koa;
 
-ui.use(Serve(`${__dirname}/frontend`));
+ui.use(Serve('frontend'));
 app.use(Mount('/', ui));
 
 app.listen(port);
