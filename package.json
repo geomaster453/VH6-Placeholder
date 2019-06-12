@@ -22,7 +22,6 @@
   "homepage": "https://github.com/VandyHacks/VH6-Placeholder#readme",
   "dependencies": {
     "koa": "^2.7.0",
-    "koa-mount": "^4.0.0",
     "koa-router": "^7.4.0",
     "koa-send": "^5.0.0",
     "koa-static": "^5.0.0"
