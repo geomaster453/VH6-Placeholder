@@ -7,13 +7,13 @@ const port = process.env.PORT || 3000;
 const app = new Koa();
 const router = new Router();
 
-app.use(Serve(`${__dirname}/frontend`));
+app.use(Serve(`${__dirname}`));
 app.use(router.routes());
 
 app.listen(port);
 
 app.use(function* index(): any {
-  yield Send(this, '../src/frontend/index.html');
+  yield Send(this, `${__dirname}/index.html`);
 });
 
 console.log(`Listening on port ${port}`);
