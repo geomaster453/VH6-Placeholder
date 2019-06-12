@@ -18,17 +18,17 @@ html {
 
 @font-face {
   font-family: "InterBold";
-  src: url("fonts/Inter-Bold.ttf");
+  src: url("assets/fonts/Inter-Bold.ttf");
 }
 
 @font-face {
   font-family: "InterSemiBold";
-  src: url("fonts/Inter-SemiBold.ttf");
+  src: url("assets/fonts/Inter-SemiBold.ttf");
 }
 
 @font-face {
   font-family: "Campground";
-  src: url("fonts/CampgroundFreeDemo-regular.otf") format("opentype");
+  src: url("assets/fonts/CampgroundFreeDemo-regular.otf") format("opentype");
 }
 
 nav {
