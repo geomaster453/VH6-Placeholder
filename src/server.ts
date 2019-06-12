@@ -8,7 +8,7 @@ const app = new Koa();
 const router = new Router();
 
 console.log(__dirname);
-app.use(Serve(`${__dirname}`));
+app.use(Serve('src'));
 app.use(router.routes());
 
 app.listen(port);
