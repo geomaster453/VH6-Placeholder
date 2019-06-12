@@ -12,10 +12,8 @@ app.use(router.routes());
 
 app.listen(port);
 
-console.log(__dirname);
-
 app.use(function* index(): any {
-  yield Send(this, `${__dirname}/index.html`);
+  yield Send(this, '../src/frontend/index.html');
 });
 
 console.log(`Listening on port ${port}`);
