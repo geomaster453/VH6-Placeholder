@@ -13,7 +13,7 @@ app.use(router.routes());
 app.listen(port);
 
 app.use(function* index(): any {
-  yield Send(this, `${__dirname}/index.html`);
+  yield Send(this, `${__dirname}/frontend/index.html`);
 });
 
 console.log(`Listening on port ${port}`);
