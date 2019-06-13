@@ -18,7 +18,7 @@ const emailSchema = new Mongoose.Schema({
 
 const hackerEmail = Mongoose.model('Emails', emailSchema);
 
-router.post('/', async (ctx) => {
+router.post('', async (ctx) => {
   const info = ctx.request.body;
   const newEmail = new hackerEmail({
     email: info.email,
