@@ -23,7 +23,8 @@
       "no-string-literal": false,
       "triple-equals": [
           false
-      ]
+      ],
+      "ordered-imports": false
   },
   "rulesDirectory": []
 }
