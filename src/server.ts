@@ -9,7 +9,8 @@ const port = process.env.PORT || 3000;
 const app = new Koa();
 const router = new Router();
 
-Mongoose.connect(process.env.MONGO_URI);
+Mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true });
+console.log('Connected to database');
 
 const emailSchema = new Mongoose.Schema({
   email: String,
