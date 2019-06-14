@@ -47,6 +47,7 @@ router.post('/', async (ctx) => {
     email: info.email,
   });
   console.log(newEmail);
+  console.log((newEmail as any).email);
   console.log(validateEmail(newEmail));
   if (validateEmail(newEmail)) {
     await newEmail.save((err) => {
