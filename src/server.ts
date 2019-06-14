@@ -34,7 +34,7 @@ const hackerEmail = Mongoose.model('Emails', emailSchema);
 
 function validateEmail(doc: any) {
   const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  let valid: boolean;
+  let valid: boolean = false;
   console.log('checkpoint1');
   hackerEmail.countDocuments({ email: doc.email.toLowerCase() }).then((count) => {
     valid = (count === 0 && re.test((doc.email as string).toLowerCase())) ? true : false;
