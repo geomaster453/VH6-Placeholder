@@ -35,9 +35,11 @@ const hackerEmail = Mongoose.model('Emails', emailSchema);
 function validateEmail(doc: any) {
   const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   let valid: boolean;
+  console.log('checkpoint1');
   hackerEmail.countDocuments({ email: doc.email.toLowerCase() }).then((count) => {
     valid = (count === 0 && re.test((doc.email as string).toLowerCase())) ? true : false;
   });
+  console.log('checkpoint2');
   return valid;
 }
 
@@ -47,11 +49,11 @@ router.post('/', async (ctx) => {
     email: info.email,
   });
   console.log(newEmail);
+  console.log(newEmail.email);
   console.log((newEmail as any).email);
   console.log(validateEmail(newEmail));
   if (validateEmail(newEmail)) {
     await newEmail.save((err) => {
-      console.log('Checkpoint');
       if (err) {
         console.log(`Database error: ${err}`);
       } else {
