@@ -46,24 +46,18 @@ router.post('/', async (ctx) => {
   const newEmail = new hackerEmail({
     email: info.email,
   });
-  // if (validateEmail(newEmail)) {
-  //   await newEmail.save((err) => {
-  //     if (err) {
-  //       console.log(`Database error: ${err}`);
-  //     } else {
-  //       console.log('Email saved in database');
-  //     }
-  //   });
-  //   ctx.response.redirect('back');
-  // }
-  await newEmail.save((err) => {
-    if (err) {
-      console.log(`Database error: ${err}`);
-    } else {
-      console.log('Email saved in database');
-    }
-  });
-  ctx.response.redirect('back');
+  console.log(validateEmail(newEmail));
+  if (validateEmail(newEmail)) {
+    await newEmail.save((err) => {
+      console.log('Checkpoint');
+      if (err) {
+        console.log(`Database error: ${err}`);
+      } else {
+        console.log('Email saved in database');
+      }
+    });
+    ctx.response.redirect('back');
+  }
 });
 
 app.use(Serve('src'));
