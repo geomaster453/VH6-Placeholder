@@ -12,12 +12,6 @@ const router = new Router();
 Mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true });
 console.log('Connected to database');
 
-interface IEmail {
-  email: String,
-}
-
-interface emailModel extends IEmail, Mongoose.Document {}
-
 // const emailSchema = new Mongoose.Schema({
 //   email: {
 //     type: String,
@@ -29,7 +23,7 @@ interface emailModel extends IEmail, Mongoose.Document {}
 //       },
 //       message: 'Email already exists!',
 //     },
-//   }  
+//   }
 // });
 
 const emailSchema = new Mongoose.Schema({
@@ -38,7 +32,11 @@ const emailSchema = new Mongoose.Schema({
 
 const hackerEmail = Mongoose.model('Emails', emailSchema);
 
-const emailExists = (doc: any) => hackerEmail.countDocuments({ email: doc.email});
+function emailExists(doc: any) { 
+  return hackerEmail.countDocuments({ email: doc.email.toLowerCase() }, (count) => {
+    return count === 0;
+  });
+}
 
 router.post('/', async (ctx) => {
   const info = ctx.request.body;
