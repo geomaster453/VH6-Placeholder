@@ -14,6 +14,14 @@ console.log('Connected to database');
 
 const emailSchema = new Mongoose.Schema({
   email: String,
+  validate: {
+    validator: function(v: string, cb: (b: boolean) => void) {
+      hackerEmail.find({ email: v }, function (docs) {
+        cb (docs.length === 0);
+      });
+    },
+    message: 'Email already exists!'
+  }
 });
 
 const hackerEmail = Mongoose.model('Emails', emailSchema);
