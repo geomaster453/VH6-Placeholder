@@ -12,36 +12,49 @@ const router = new Router();
 Mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true });
 console.log('Connected to database');
 
+interface IEmail {
+  email: String,
+}
+
+interface emailModel extends IEmail, Mongoose.Document {}
+
+// const emailSchema = new Mongoose.Schema({
+//   email: {
+//     type: String,
+//     validate: {
+//       validator: function (v: string, cb: (b: boolean) => void) {
+//         hackerEmail.find({ email: v }, function (docs) {
+//           cb (docs.length === 0);
+//         });
+//       },
+//       message: 'Email already exists!',
+//     },
+//   }  
+// });
+
 const emailSchema = new Mongoose.Schema({
-  email: {
-    type: String,
-    validate: {
-      isAsync: true,
-      validator: (v: string, cb: (b: boolean) => void) => {
-        hackerEmail.find({ email: v }, (docs) => {
-          cb (docs.length === 0);
-        });
-      },
-      message: 'Email already exists!',
-    },
-  }  
+  email: String,
 });
 
 const hackerEmail = Mongoose.model('Emails', emailSchema);
+
+const emailExists = (doc: any) => hackerEmail.countDocuments({ email: doc.email});
 
 router.post('/', async (ctx) => {
   const info = ctx.request.body;
   const newEmail = new hackerEmail({
     email: info.email,
   });
-  await newEmail.save((err) => {
-    if (err) {
-      console.log(`Database error: ${err}`);
-    } else {
-      console.log('Email saved in database');
-    }
-  });
-  ctx.response.redirect('back');
+  if (!emailExists(newEmail)) {
+    await newEmail.save((err) => {
+      if (err) {
+        console.log(`Database error: ${err}`);
+      } else {
+        console.log('Email saved in database');
+      }
+    });
+    ctx.response.redirect('back');
+  }
 });
 
 app.use(Serve('src'));
