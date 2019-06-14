@@ -13,15 +13,18 @@ Mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true });
 console.log('Connected to database');
 
 const emailSchema = new Mongoose.Schema({
-  email: String,
-  validate: {
-    validator: (v: string, cb: (b: boolean) => void) => {
-      hackerEmail.find({ email: v }, (docs) => {
-        cb (docs.length === 0);
-      });
+  email: {
+    type: String,
+    validate: {
+      isAsync: true,
+      validator: (v: string, cb: (b: boolean) => void) => {
+        hackerEmail.find({ email: v }, (docs) => {
+          cb (docs.length === 0);
+        });
+      },
+      message: 'Email already exists!',
     },
-    message: 'Email already exists!',
-  },
+  }  
 });
 
 const hackerEmail = Mongoose.model('Emails', emailSchema);
