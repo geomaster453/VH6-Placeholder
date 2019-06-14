@@ -9,9 +9,18 @@ const bodyParser = require("koa-bodyparser");
 const port = process.env.PORT || 3000;
 const app = new Koa();
 const router = new Router();
-Mongoose.connect(process.env.MONGO_URI);
+Mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true });
+console.log('Connected to database');
 const emailSchema = new Mongoose.Schema({
     email: String,
+    validate: {
+        validator: function (v, cb) {
+            hackerEmail.find({ email: v }, function (docs) {
+                cb(docs.length === 0);
+            });
+        },
+        message: 'Email already exists!'
+    }
 });
 const hackerEmail = Mongoose.model('Emails', emailSchema);
 router.post('/', async (ctx) => {
@@ -27,6 +36,7 @@ router.post('/', async (ctx) => {
             console.log('Email saved in database');
         }
     });
+    ctx.response.redirect('back');
 });
 app.use(Serve('src'));
 app.use(bodyParser());
