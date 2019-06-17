@@ -38,7 +38,7 @@ async function validateEmail(doc: any) {
   await hackerEmail.countDocuments({ email: doc.email.toLowerCase() }, (err, count: number) => {
     valid = (count === 0 && valid) ? true : false;
   })
-  return valid;
+  return await valid;
 }
 
 router.post('/', async (ctx) => {
