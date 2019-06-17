@@ -37,9 +37,9 @@ function validateEmail(doc: any) {
   let valid: boolean = re.test((doc.email as string).toLowerCase());
   hackerEmail.countDocuments({ email: doc.email.toLowerCase() }, (err, count: number) => {
     valid = (count === 0 && valid) ? true : false;
-    console.log(valid);
+    console.log('Inside: ', valid);
   });
-  console.log(valid);
+  console.log('Outside: ', valid);
   return valid;
 }
 
