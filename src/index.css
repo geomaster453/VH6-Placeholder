@@ -1,10 +1,10 @@
-html {
-  height: 100%;
-}
+/* *{
+  border: 1px solid red;
+} */
 
-body {
+html {
+  height: 100vh;
   background: linear-gradient(-0.125turn, rgb(180, 91, 85), #F29892);
-  min-height: 100%;
 }
 
 @media screen and (max-width: 1045px) {
@@ -18,17 +18,17 @@ body {
 
 @font-face {
   font-family: "InterBold";
-  src: url("fonts/Inter-Bold.ttf");
+  src: url("assets/fonts/Inter-Bold.ttf");
 }
 
 @font-face {
   font-family: "InterSemiBold";
-  src: url("fonts/Inter-SemiBold.ttf");
+  src: url("assets/fonts/Inter-SemiBold.ttf");
 }
 
 @font-face {
   font-family: "Campground";
-  src: url("fonts/CampgroundFreeDemo-regular.otf") format("opentype");
+  src: url("assets/fonts/CampgroundFreeDemo-regular.otf") format("opentype");
 }
 
 nav {
@@ -58,6 +58,7 @@ nav > div {
   top: 0px;
   right: 0px;
   height: 300px;
+  z-index: 0;
 }
 
 .bottomright {
@@ -65,6 +66,7 @@ nav > div {
   bottom: 0px;
   right: 0px;
   height: 300px;
+  z-index: 0;
 }
 
 .bottomleft {
@@ -72,6 +74,7 @@ nav > div {
   bottom: 0px;
   left: 0px;
   height: 500px;
+  z-index: 0;
 }
 
 .content {
@@ -117,11 +120,11 @@ nav > div {
 
 .updates {
   border-width: 4px;
-  border-radius: 20px;
+  border-radius: 30px;
   border-color: #3148A1;
   border-style: solid;
-  width: calc(37vh + 20px);
-  line-height: 30px;
+  width: calc(21vw + 20px);
+  line-height: 40px;
   padding-left: 10px;
   background-color: rgb(243, 184, 161);
 }
@@ -142,5 +145,5 @@ input::placeholder {
 .submit {
   height: 20px;
   margin-left: -30px;
-  margin-top: 10px;
+  margin-top: 14px;
 }
