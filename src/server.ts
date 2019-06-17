@@ -37,9 +37,7 @@ async function validateEmail(doc: any) {
   let valid: boolean = re.test((doc.email as string).toLowerCase());
   await hackerEmail.countDocuments({ email: doc.email.toLowerCase() }, (err, count: number) => {
     valid = (count === 0 && valid) ? true : false;
-    console.log('Inside: ', valid);
   })
-  console.log('Outside: ', valid);
   return valid;
 }
 
@@ -49,6 +47,7 @@ router.post('/', async (ctx) => {
     email: info.email,
   });
   if (validateEmail(newEmail)) {
+    console.log(validateEmail(newEmail));
     await newEmail.save((err) => {
       if (err) {
         console.log(`Database error: ${err}`);
