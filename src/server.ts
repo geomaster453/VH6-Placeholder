@@ -32,13 +32,13 @@ const emailSchema = new Mongoose.Schema({
 
 const hackerEmail = Mongoose.model('Emails', emailSchema);
 
-function validateEmail(doc: any) {
+async function validateEmail(doc: any) {
   const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   let valid: boolean = re.test((doc.email as string).toLowerCase());
-  hackerEmail.countDocuments({ email: doc.email.toLowerCase() }, (err, count: number) => {
+  await hackerEmail.countDocuments({ email: doc.email.toLowerCase() }, (err, count: number) => {
     valid = (count === 0 && valid) ? true : false;
     console.log('Inside: ', valid);
-  });
+  })
   console.log('Outside: ', valid);
   return valid;
 }
