@@ -58,6 +58,7 @@ nav > div {
   top: 0px;
   right: 0px;
   height: 300px;
+  z-index: 0;
 }
 
 .bottomright {
@@ -65,6 +66,7 @@ nav > div {
   bottom: 0px;
   right: 0px;
   height: 300px;
+  z-index: 0;
 }
 
 .bottomleft {
@@ -72,6 +74,7 @@ nav > div {
   bottom: 0px;
   left: 0px;
   height: 500px;
+  z-index: 0;
 }
 
 .content {
