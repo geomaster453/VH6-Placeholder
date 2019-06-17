@@ -36,7 +36,7 @@ function validateEmail(doc: any) {
   const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   let valid: boolean = re.test((doc.email as string).toLowerCase());
   console.log(valid);
-  hackerEmail.countDocuments({ email: doc.email }, (count) => {
+  hackerEmail.countDocuments({ email: doc.email.toLowerCase() }, function (count) {
     console.log(count);
     valid = (count === 0 && valid) ? true : false;
   });
