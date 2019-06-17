@@ -54,8 +54,8 @@ router.post('/', async (ctx) => {
         console.log('Email saved in database');
       }
     });
-    ctx.response.redirect('back');
   }
+  ctx.response.redirect('back');
 });
 
 app.use(Serve('src'));
