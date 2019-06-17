@@ -4,7 +4,7 @@ import * as Send from 'koa-send';
 import * as Serve from 'koa-static';
 import * as Mongoose from 'mongoose';
 import * as bodyParser from 'koa-bodyparser';
-import * as Helmet from 'koa-helmet'
+import * as Helmet from 'koa-helmet';
 
 const port = process.env.PORT || 3000;
 const app = new Koa();
@@ -13,6 +13,9 @@ const router = new Router();
 Mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true });
 console.log('Connected to database');
 
+const re = new RegExp(['^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]',
+                         '{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$'].join(''));
+
 const emailSchema = new Mongoose.Schema({
   email: String,
 });
@@ -20,11 +23,10 @@ const emailSchema = new Mongoose.Schema({
 const hackerEmail = Mongoose.model('Emails', emailSchema);
 
 async function validateEmail(doc: any) {
-  const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   let valid: boolean = re.test((doc.email as string).toLowerCase());
   await hackerEmail.countDocuments({ email: doc.email.toLowerCase() }, (err, count: number) => {
     valid = (count === 0 && valid) ? true : false;
-  })
+  });
   return valid;
 }
 
