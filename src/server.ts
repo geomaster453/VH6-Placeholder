@@ -46,8 +46,8 @@ router.post('/', async (ctx) => {
   const newEmail = new hackerEmail({
     email: info.email,
   });
+  console.log(validateEmail(newEmail));
   if (validateEmail(newEmail)) {
-    console.log(validateEmail(newEmail));
     await newEmail.save((err) => {
       if (err) {
         console.log(`Database error: ${err}`);
