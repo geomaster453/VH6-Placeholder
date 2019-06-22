@@ -1,10 +1,15 @@
-*{
+/* *{
   border: 1px solid red;
-}
+} */
 
 html {
   height: 100vh;
   background: linear-gradient(-0.125turn, rgb(180, 91, 85), #F29892);
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
 }
 
 @media screen and (max-width: 1045px) {
