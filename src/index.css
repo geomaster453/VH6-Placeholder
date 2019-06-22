@@ -1,6 +1,6 @@
-/* *{
+*{
   border: 1px solid red;
-} */
+}
 
 html {
   height: 100vh;
@@ -87,8 +87,6 @@ nav > div {
 .stack {
   height: 100%;
   min-width: 50%;
-  padding-top: 3vh;
-  padding-left: 12vh;
 }
 
 .text {
@@ -98,8 +96,6 @@ nav > div {
   align-items: center;
   height: 100%;
   width: 100%;
-  padding-right: 18vh;
-  margin-left: -15vh;
 }
 
 .artstyle {
