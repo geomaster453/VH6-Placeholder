@@ -7,6 +7,11 @@ html {
   background: linear-gradient(-0.125turn, rgb(180, 91, 85), #F29892);
 }
 
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
 @media screen and (max-width: 1045px) {
   .topright {
     display: none;
@@ -37,7 +42,7 @@ nav {
   justify-content: flex-start;
   align-items: flex-start;
   margin-top: 30px;
-  margin-left: 40px;
+  margin-left: 50px;
   margin-bottom: 30px;
 }
 
@@ -73,7 +78,10 @@ nav > div {
   position: absolute;
   bottom: 0px;
   left: 0px;
-  height: 500px;
+  width: auto;
+  height: auto;
+  max-width: 516px;
+  max-height: 500px;
   z-index: 0;
 }
 
@@ -81,13 +89,14 @@ nav > div {
   display: flex;
   flex-direction: row;
   height: 70vh;
+  width: 90vw;
+  max-width: 1200px;
+  margin: auto;
 }
 
 .stack {
   height: 100%;
   min-width: 50%;
-  padding-top: 3vh;
-  padding-left: 12vh;
 }
 
 .text {
@@ -97,8 +106,6 @@ nav > div {
   align-items: center;
   height: 100%;
   width: 100%;
-  padding-right: 18vh;
-  margin-left: -15vh;
 }
 
 .artstyle {
