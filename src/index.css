@@ -132,10 +132,11 @@ nav > div {
   border-radius: 30px;
   border-color: #3148A1;
   border-style: solid;
-  width: calc(21vw + 20px);
+  width: 60%;
+  min-width: 150px;
   line-height: 40px;
-  padding-left: 10px;
   background-color: rgb(243, 184, 161);
+  padding: 0px 10px;
 }
 
 input::placeholder {
