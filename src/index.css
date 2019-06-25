@@ -112,10 +112,16 @@ nav > div {
 
 .artstyle {
   color: #FFFFFF;
-  font-size: 8vw;
+  font-size: 70px;
   font-family: Campground;
   text-align: right;
   min-width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+  .artstyle {
+    font-size: 40px;
+  }
 }
 
 .date {
