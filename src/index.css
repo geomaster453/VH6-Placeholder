@@ -3,7 +3,9 @@
 } */
 
 html {
+  position: fixed;
   height: 100vh;
+  width: 100vw;
   background: linear-gradient(-0.125turn, rgb(180, 91, 85), #F29892);
 }
 
@@ -91,7 +93,13 @@ nav > div {
   height: 70vh;
   width: 90vw;
   max-width: 1200px;
-  margin: auto;
+  margin: 100px auto;
+}
+
+@media screen and (max-width: 600px) {
+  .content {
+    margin-top: 50px;
+  }
 }
 
 .stack {
@@ -110,10 +118,16 @@ nav > div {
 
 .artstyle {
   color: #FFFFFF;
-  font-size: 9.5vh;
+  font-size: 70px;
   font-family: Campground;
   text-align: right;
   min-width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+  .artstyle {
+    font-size: 40px;
+  }
 }
 
 .date {
@@ -130,10 +144,11 @@ nav > div {
   border-radius: 30px;
   border-color: #3148A1;
   border-style: solid;
-  width: calc(21vw + 20px);
+  width: 60%;
+  min-width: 150px;
   line-height: 40px;
-  padding-left: 10px;
   background-color: rgb(243, 184, 161);
+  padding: 0px 10px;
 }
 
 input::placeholder {
