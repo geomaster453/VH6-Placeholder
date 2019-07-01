@@ -3,8 +3,15 @@
 } */
 
 html {
+  position: fixed;
   height: 100vh;
+  width: 100vw;
   background: linear-gradient(-0.125turn, rgb(180, 91, 85), #F29892);
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
 }
 
 @media screen and (max-width: 1045px) {
@@ -13,6 +20,12 @@ html {
   }
   .bottomright {
     display: none;
+  }
+  .updates {
+    width: calc(32.3vw + 20px) !important;
+  }
+  input::placeholder {
+    font-size: 1.689vw !important;
   }
 }
 
@@ -31,28 +44,6 @@ html {
   src: url("assets/fonts/CampgroundFreeDemo-regular.otf") format("opentype");
 }
 
-nav {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-start;
-  margin-top: 30px;
-  margin-left: 40px;
-  margin-bottom: 30px;
-}
-
-nav > img {
-  height: 55px;
-}
-
-nav > div {
-  font-family: InterSemiBold;
-  font-size: 30px;
-  color: #3148A1;
-  margin-top: 10px;
-  margin-left: 50px;
-}
-
 .topright {
   position: absolute;
   top: 0px;
@@ -66,14 +57,18 @@ nav > div {
   bottom: 0px;
   right: 0px;
   height: 300px;
-  z-index: 0;
+  user-select: none;
+  z-index: -100;
 }
 
 .bottomleft {
   position: absolute;
   bottom: 0px;
   left: 0px;
-  height: 500px;
+  width: auto;
+  height: auto;
+  max-width: 516px;
+  max-height: 500px;
   z-index: 0;
 }
 
@@ -81,13 +76,23 @@ nav > div {
   display: flex;
   flex-direction: row;
   height: 70vh;
+  width: 90vw;
+  max-width: 1200px;
+  margin: 100px auto;
+}
+
+@media screen and (max-width: 600px) {
+  .content {
+    margin-top: 50px;
+  }
+  .artstyle {
+    font-size: 40px !important;
+  }
 }
 
 .stack {
   height: 100%;
   min-width: 50%;
-  padding-top: 3vh;
-  padding-left: 12vh;
 }
 
 .text {
@@ -97,8 +102,8 @@ nav > div {
   align-items: center;
   height: 100%;
   width: 100%;
-  padding-right: 18vh;
-  margin-left: -15vh;
+  margin-left: -4.119vw;
+  padding-right: 0;
 }
 
 .artstyle {
@@ -123,15 +128,16 @@ nav > div {
   border-radius: 30px;
   border-color: #3148A1;
   border-style: solid;
-  width: calc(21vw + 20px);
+  width: 343.66px;
+  min-width: 150px;
   line-height: 40px;
-  padding-left: 10px;
   background-color: rgb(243, 184, 161);
+  padding: 0px 10px;
 }
 
 input::placeholder {
   color: rgb(100, 116, 184);
-  font-size: 2vh;
+  font-size: 15.88px;
   font-weight: 125;
 }
 
