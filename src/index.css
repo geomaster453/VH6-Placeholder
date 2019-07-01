@@ -114,12 +114,6 @@ body {
   min-width: 100%;
 }
 
-@media screen and (max-width: 600px) {
-  .artstyle {
-    font-size: 40px;
-  }
-}
-
 .date {
   color: #3148A1;
   font-size: 4.5vh;
