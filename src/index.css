@@ -14,6 +14,10 @@ body {
   padding: 0px;
 }
 
+img {
+  pointer-events: none;
+}
+
 @media screen and (max-width: 1045px) {
   .topright {
     display: none;
@@ -48,15 +52,16 @@ body {
   position: absolute;
   top: 0px;
   right: 0px;
-  height: 300px;
-  z-index: 0;
+  height: 37.783vh; /* 300px / 794px */
+  user-select: none;
+  z-index: -100;
 }
 
 .bottomright {
   position: absolute;
   bottom: 0px;
   right: 0px;
-  height: 300px;
+  height: 37.783vh; /* 300px / 794px */
   user-select: none;
   z-index: -100;
 }
@@ -65,16 +70,15 @@ body {
   position: absolute;
   bottom: 0px;
   left: 0px;
-  width: auto;
-  height: auto;
-  max-width: 516px;
-  max-height: 500px;
-  z-index: 0;
+  height: 69.972vh; /* 500px / 794px */
+  user-select: none;
+  z-index: -100;
 }
 
 .content {
   display: flex;
   flex-direction: row;
+  justify-content: center;
   height: 70vh;
   width: 90vw;
   max-width: 1200px;
@@ -84,9 +88,33 @@ body {
 @media screen and (max-width: 600px) {
   .content {
     margin-top: 50px;
+    flex-direction: column;
+    align-items: center;
+  }
+  .text {
+    width: 80% !important;
+  }
+  .stack {
+    padding-left: 30px;
+    width: auto;
+    max-height: 186px;
+    margin-bottom: 10px;
+  }
+  .date {
+    font-size: 5.185vw !important;
+    margin-bottom: 6vw !important;
   }
   .artstyle {
-    font-size: 40px !important;
+    font-size: 10vw !important;
+  }
+  .updates {
+    width: 100% !important;
+  }
+  input::placeholder {
+    font-size: 15.88px !important;
+  }
+  .bottomleft {
+    display: none;
   }
 }
 
@@ -101,14 +129,15 @@ body {
   justify-content: center;
   align-items: center;
   height: 100%;
-  width: 100%;
+  width: 50%;
+  min-width: 300px;
   margin-left: -4.119vw;
   padding-right: 0;
 }
 
 .artstyle {
   color: #FFFFFF;
-  font-size: 70px;
+  font-size: 8.816vh; /* 70px / 794px */
   font-family: Campground;
   text-align: right;
   min-width: 100%;
@@ -132,13 +161,13 @@ body {
   min-width: 150px;
   line-height: 40px;
   background-color: rgb(243, 184, 161);
-  padding: 0px 10px;
+  padding: 2px 10px 0px;
 }
 
 input::placeholder {
   color: rgb(100, 116, 184);
   font-size: 15.88px;
-  font-weight: 125;
+  font-weight: 500;
 }
 
 .form {
