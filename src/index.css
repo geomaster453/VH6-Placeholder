@@ -2,6 +2,10 @@
   border: 1px solid red;
 } */
 
+* {
+  user-select: none;
+}
+
 html {
   position: fixed;
   height: 100vh;
@@ -53,7 +57,6 @@ img {
   top: 0px;
   right: 0px;
   height: 37.783vh; /* 300px / 794px */
-  user-select: none;
   z-index: -100;
 }
 
@@ -62,7 +65,6 @@ img {
   bottom: 0px;
   right: 0px;
   height: 37.783vh; /* 300px / 794px */
-  user-select: none;
   z-index: -100;
 }
 
@@ -71,7 +73,6 @@ img {
   bottom: 0px;
   left: 0px;
   height: 69.972vh; /* 500px / 794px */
-  user-select: none;
   z-index: -100;
 }
 
@@ -104,7 +105,7 @@ img {
     font-size: 5.185vw !important;
     margin-bottom: 6vw !important;
   }
-  .artstyle {
+  .art {
     font-size: 10vw !important;
   }
   .updates {
@@ -135,7 +136,7 @@ img {
   padding-right: 0;
 }
 
-.artstyle {
+.art {
   color: #FFFFFF;
   font-size: 8.816vh; /* 70px / 794px */
   font-family: Campground;
