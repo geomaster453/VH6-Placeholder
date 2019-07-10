@@ -23,6 +23,9 @@ img {
 }
 
 @media screen and (max-width: 1045px) {
+  .content {
+    margin-top: 50px !important
+  }
   .topright {
     display: none;
   }
@@ -107,6 +110,7 @@ img {
   }
   .art {
     font-size: 10vw !important;
+    text-align: center !important;
   }
   .updates {
     width: 100% !important;
@@ -130,7 +134,7 @@ img {
   justify-content: center;
   align-items: center;
   height: 100%;
-  width: 50%;
+  width: 100%;
   min-width: 300px;
   margin-left: -4.119vw;
   padding-right: 0;
@@ -161,8 +165,8 @@ img {
   width: 343.66px;
   min-width: 150px;
   line-height: 40px;
-  background-color: rgb(243, 184, 161);
-  padding: 2px 10px 0px;
+  background-color: rgb(230, 230, 230);
+  padding: 2px 30px 1px 10px;
 }
 
 input::placeholder {

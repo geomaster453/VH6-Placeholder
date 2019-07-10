@@ -14,10 +14,13 @@ Mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true });
 console.log('Connected to database');
 
 const re = new RegExp(['^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]',
-                         '{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$'].join(''));
+                         '{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$'].join(''));
 
 const emailSchema = new Mongoose.Schema({
-  email: String,
+  email: {
+    type: String,
+    max: 45,
+  }  
 });
 
 const hackerEmail = Mongoose.model('Emails', emailSchema);
