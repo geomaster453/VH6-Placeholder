@@ -11,6 +11,7 @@ html {
   height: 100vh;
   width: 100vw;
   background: linear-gradient(-0.125turn, rgb(180, 91, 85), #F29892);
+  background-attachment: fixed;
 }
 
 body {
