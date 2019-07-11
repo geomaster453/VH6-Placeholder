@@ -170,6 +170,11 @@ img {
   padding: 2px 30px 1px 10px;
 }
 
+.updates:focus {
+  outline: 0;
+  background-color: rgb(240, 240, 240);
+}
+
 input::placeholder {
   color: rgb(100, 116, 184);
   font-size: 15.88px;
