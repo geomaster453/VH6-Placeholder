@@ -98,12 +98,7 @@ img {
   }
   .text {
     width: 80% !important;
-  }
-  .stack {
-    padding-left: 30px;
-    width: auto;
-    max-height: 186px;
-    margin-bottom: 10px;
+    margin-left: 0 !important;
   }
   .date {
     font-size: 5.185vw !important;
@@ -124,9 +119,16 @@ img {
   }
 }
 
+.stack-wrapper {
+  margin: auto;
+  width: 40%;
+}
+
 .stack {
-  height: 100%;
-  min-width: 50%;
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: auto;
 }
 
 .text {
@@ -135,10 +137,9 @@ img {
   justify-content: center;
   align-items: center;
   height: 100%;
-  width: 100%;
-  min-width: 300px;
-  margin-left: -4.119vw;
+  width: 55%;
   padding-right: 0;
+  margin-left: 5%;
 }
 
 .art {
