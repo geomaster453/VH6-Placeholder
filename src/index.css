@@ -86,6 +86,7 @@ img {
 
 .stack {
   min-width: 40%;
+  max-height:30%;
   object-fit: contain;
 }
 
