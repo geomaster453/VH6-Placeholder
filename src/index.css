@@ -86,7 +86,6 @@ img {
 
 .stack {
   min-width: 40%;
-  max-height:30%;
   object-fit: contain;
 }
 
@@ -168,7 +167,7 @@ input::placeholder {
     width: 80%;
   }
   .stack {
-    max-height: 40vh;
+    max-height: 30vh;
     margin-bottom: 10px;
   }
   .date {
