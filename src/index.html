@@ -9,6 +9,24 @@
     <meta name="theme-color" content="#f29892" />
     <title>VandyHacks VI</title>
     <link rel="stylesheet" href="index.css" />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-104328270-3"
+    ></script>
+
+    <script>
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+
+      gtag('js', new Date());
+
+      gtag('config', 'UA-104328270-3');
+    </script>
   </head>
   <body>
     <div class="paintstrokes">
@@ -17,14 +35,21 @@
       <img class="bottomright" src="assets/SVG/bottomright.svg" />
     </div>
     <div class="content">
-      <img class="stack" sizes="(max-width: 725px) 100vw, 725px" srcset="
+      <img
+        class="stack"
+        sizes="(max-width: 725px) 100vw, 725px"
+        srcset="
           assets/img/stack_200.png 200w,
           assets/img/stack_326.png 326w,
           assets/img/stack_425.png 425w,
           assets/img/stack_510.png 510w,
           assets/img/stack_587.png 587w,
           assets/img/stack_658.png 658w,
-          assets/img/stack_725.png 725w," src="assets/img/stack_725.png" alt="" />
+          assets/img/stack_725.png 725w
+        "
+        src="assets/img/stack_725.png"
+        alt=""
+      />
       <div class="text">
         <img class="vhname" src="assets/SVG/vhname.svg" />
         <div class="art">
@@ -35,10 +60,21 @@
           Nashville, TN
         </div>
 
-        <form action="https://vandyhacks.us9.list-manage.com/subscribe/post" method="POST" class="form" name="form">
+        <form
+          action="https://vandyhacks.us9.list-manage.com/subscribe/post"
+          method="POST"
+          class="form"
+          name="form"
+        >
           <input type="hidden" name="u" value="de65d94c2486508193527dd45" />
           <input type="hidden" name="id" value="f96dc9a0c6" />
-          <input class="updates" name="MERGE0" type="email" placeholder="Enter your email address for updates" required />
+          <input
+            class="updates"
+            name="MERGE0"
+            type="email"
+            placeholder="Enter your email address for updates"
+            required
+          />
           <input class="submit" type="image" src="assets/SVG/rightarrow.svg" />
         </form>
       </div>
