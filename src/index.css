@@ -108,7 +108,6 @@ img {
   font-family: Campground;
   text-align: right;
   min-width: 100%;
-  -moz-user-select:none
 }
 
 .date {
@@ -118,7 +117,6 @@ img {
   text-align: center;
   margin-top: 2vh;
   margin-bottom: 5vh;
-  -moz-user-select:none
 }
 
 .updates {
